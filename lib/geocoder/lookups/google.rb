@@ -36,6 +36,10 @@ module Geocoder::Lookup
       unless options[:bounds].nil?
         params[:bounds] = options[:bounds].map{ |point| "#{point[0]},#{point[1]}" }.join('|')
       end
+      
+      unless options[:region].nil?
+        params[:region] = options[:region]
+      end
 
       "#{protocol}://maps.googleapis.com/maps/api/geocode/json?" + hash_to_query(params)
     end

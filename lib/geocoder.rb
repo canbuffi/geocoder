@@ -32,6 +32,12 @@ module Geocoder
   #   in most cases this will only bias, NOT restrict results to the
   #   given bounds).
   #
+  # * <tt>:region</tt> - A region code, specified as a ccTLD
+  #   ("top-level domain") two-character value. If supported by your
+  #   chosen geocoding service this will bias results to those that
+  #   fall within the given region. (_note:_ in most cases this will
+  #   only bias, NOT restrict results to the given bounds).
+  #
   def search(query, options = {})
     blank_query?(query) ? [] : lookup(query).search(query, options)
   end

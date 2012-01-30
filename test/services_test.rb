@@ -33,6 +33,10 @@ class ServicesTest < Test::Unit::TestCase
     assert_match /bounds=40.0+%2C-120.0+%7C39.0+%2C-121.0+/, url
   end
 
+  def test_google_query_url_contains_region
+    url = Geocoder::Lookup::Google.new.send(:query_url, "Some Intersection", :region => 'fr')
+    assert_match /region=fr/, url
+  end
 
   # --- Google Premier ---
 

@@ -413,8 +413,12 @@ This returns an array of <tt>Geocoder::Result</tt> objects with all information 
 === Passing Additional Options
 
 It is also possible to pass additional options to a geocoding service when calling <tt>Geocoder.search</tt>:
-
+  
   results = Geocoder.search("McCarren Park, Brooklyn, NY", :bounds => [[40.8019, -73.7135], [40.5829, -74.0321]])
+
+Another example:
+
+  results = Geocoder.search("Paris", :region => 'fr')
 
 For a list of options see the documentation for <tt>Geocoder.search</tt>.
 
